@@ -1,0 +1,40 @@
+# Code-as-data
+
+REPL:
+cd ld2023
+fork .base lib.base
+
+Scratch:
+addMore: Nat -> Nat -> Nat
+addMore a b = a + b + 2
+
+> addMore 2 3
+
+-- show ui
+-- show adding other definitions
+
+addLess: Nat -> Nat -> Nat
+addLess a b = a + b + 1
+
+moreAdd: Nat -> Nat -> Nat
+moreAdd a b = a + b + 2
+
+addMore2: Nat -> Nat -> Nat
+addMore2 a b = 2 + a + b
+
+# No dependency hell (updating deps)
+
+Prepare:
+cd leftpad
+cd v1
+
+
+
+===
+
+- upgrading code
+
+
+===
+
+pull stew.public.projects.httpclient.latest lib.httpclient

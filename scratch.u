@@ -1,0 +1,11 @@
+leftpad: Nat -> Text -> Text
+leftpad n s =
+    currentSize = size s
+    if currentSize < n 
+    then (repeat (n - currentSize) "x") ++ s
+    else s
+
+> leftpad 5 "abc"
+
+> leftpad 5 "abcdef"
+--- 
