@@ -1,0 +1,8 @@
+# The promise
+
+A new approach to:
+* distributed programming 
+* refactoring
+* durable storage
+* storing code
+* dependencies

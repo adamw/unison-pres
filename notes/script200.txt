@@ -22,19 +22,3 @@ moreAdd a b = a + b + 2
 addMore2: Nat -> Nat -> Nat
 addMore2 a b = 2 + a + b
 
-# No dependency hell (updating deps)
-
-Prepare:
-cd leftpad
-cd v1
-
-
-
-===
-
-- upgrading code
-
-
-===
-
-pull stew.public.projects.httpclient.latest lib.httpclient

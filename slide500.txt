@@ -1,0 +1,7 @@
+# To the cloud
+
+* cloud through a capability (Remote)
+  * fork / await tasks
+  * remote different from local (ability)
+  * painless rolling upgrades
+  * spark-like datasets / microservices

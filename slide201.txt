@@ -1,0 +1,8 @@
+# Live-coding 1, what we've seen:
+
+* content-address code
+* UI for browsing code
+* tree-like namespacing
+* no dependency hell
+* guided upgrades
+* code sharing

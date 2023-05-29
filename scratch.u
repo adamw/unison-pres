@@ -1,11 +1,9 @@
-leftpad: Nat -> Text -> Text
-leftpad n s =
-    currentSize = size s
-    if currentSize < n 
-    then (repeat (n - currentSize) "x") ++ s
-    else s
+remote: '{Remote} Nat
+remote _ =
+  use Nat +
+  use Remote await
+  t1 = forkAt here! '(1 + 1)
+  t2 = forkAt here! '(2 + 2)
+  await t1 + await t2
 
-> leftpad 5 "abc"
-
-> leftpad 5 "abcdef"
---- 
+program _ = Remote.pure.run remote

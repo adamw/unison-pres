@@ -1,0 +1,4 @@
+# What is Unison?
+
+Unison is a friendly programming language from the future: 
+statically-typed, functional, and a lot of fun.

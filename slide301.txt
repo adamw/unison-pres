@@ -1,0 +1,6 @@
+# Live-coding 2, what we've seen:
+
+* algebraic effect system 
+* abilities, not monads
+* manually managed laziness (quoting)
+  * no referential transparency

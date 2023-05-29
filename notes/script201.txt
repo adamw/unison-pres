@@ -1,0 +1,51 @@
+# No dependency hell (updating deps)
+
+Prepare:
+cd leftpad
+cd v1
+fork .base lib.base
+
+Add impl:
+
+leftpad: Nat -> Text -> Text
+leftpad n s =
+    currentSize = size s
+    if currentSize < n 
+    then (repeat (n - currentSize) "x") ++ s
+    else s
+
+Prepare v2 similarly (update!)
+Prepare v3 w/ additional param (update!)
+
+Create helloapp
+
+cd helloapp
+fork .base lib.base
+fork .leftpad.v1 lib.leftpad1
+
+Impl:
+hello: Text -> Text
+hello name = leftpad 30 ("Hello, " ++ name)
+
+> hello "Adam"
+
+fork .leftpad.v2 lib.leftpad2
+
+-- note: two versions of the "same" dependency at the same time 
+
+> hello "Adam" - still the same
+
+view.patch lib.leftpad.patch
+patch lib.leftpad.patch
+
+> hello "Adam"
+
+fork .leftpad.v3 lib.leftpad3
+
+todo lib.leftpad3.patch -- patch doesn't work
+
+===
+
+push code: push.create adamw.public.example1
+
+

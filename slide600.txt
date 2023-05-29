@@ -1,0 +1,21 @@
+Summing up:
+
+* content-addressed code
+* no dependency hell
+* dependency injection
+* direct-style effects w/ an algebraic effect system
+* remote computations
+* cloud: data processing & microservices
+
+Links:
+
+* Trying out Unison series: 
+  https://softwaremill.com/trying-out-unison-part-1-code-as-hashes/
+
+* Unison docs, cloud, share:
+  https://www.unison-lang.org  
+
+* Get in touch! 
+  http://twitter.com/adamwarski
+  https://softwaremill.social/@adamwarski
+  https://softwaremill.com

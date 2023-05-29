@@ -1,0 +1,12 @@
+# Effects
+
+banner: '{IO, Exception} Unit
+banner _ = printLine "@ LambdaDays"
+
+sayHello: Text ->{IO, Exception} Unit
+sayHello name = printLine ("Hello, " ++ name)
+
+program: '{IO, Exception} Unit
+program _ = 
+    banner
+    sayHello "Adam"

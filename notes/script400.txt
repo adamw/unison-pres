@@ -1,0 +1,32 @@
+# DI
+
+pull stew.public.projects.httpclient.latest .httpclient
+fork .httpclient lib.httpclient
+
+httpGet: Text ->{Exception} httpclient.Request
+httpGet uri =
+    parsed = Uri.parse uri
+    parsedOrRaise = getOrElse' '(Exception.raise (failure ("Cannot parse uri: " ++ uri) uri)) parsed
+    httpclient.Request.get parsedOrRaise
+
+==
+
+httpBinRequest: '{Http, Exception} HttpResponse
+httpBinRequest _ = request (httpGet "https://httpbin.org/get")
+
+fakeHttp: '{g, Http} r ->{g} r
+fakeHttp httpProgram =
+  impl: abilities.Request {Http} r -> r
+  impl = cases
+    { pure } -> pure
+    { Http.tryRequest req -> resume } ->
+        response = match URI.toText <| uri req with
+            "https://httpbin.org/get" ->
+                Right (HttpResponse (Status 200 "OK") Version.http11 Headers.empty Body.empty)
+            _ -> Left (failure "Connection error" req)
+        handle (resume response) with impl
+  handle !httpProgram with impl
+
+program1 _ =  handle !httpBinRequest with Http.handler
+
+program2 _ =  fakeHttp httpBinRequest 

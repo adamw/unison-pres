@@ -1,0 +1,4 @@
+# Live-coding 3, what we've seen:
+
+* dependency injection
+* errors as exceptions (ability)

@@ -1,0 +1,16 @@
+remote: '{Remote} Nat
+remote _ =
+  use Nat +
+  use Remote await
+  t1 = forkAt here! '(1 + 1)
+  t2 = forkAt here! '(2 + 2)
+  await t1 + await t2
+
+program _ = Remote.pure.run remote
+
+-- 
+
+hello : HttpRequest -> HttpResponse
+hello req = HttpResponse.ok (Body (Text.toUtf8 "Hello, world!"))
+
+deployHelloWorld = do cloud.services.http.deploy hello
