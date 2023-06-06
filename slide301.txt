@@ -3,4 +3,3 @@
 * algebraic effect system 
 * abilities, not monads
 * manually managed laziness (quoting)
-  * no referential transparency
